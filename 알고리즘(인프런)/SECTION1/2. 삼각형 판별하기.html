@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c) {
+                // let answer = "";
+                // let num = [a, b, c];
+                // num.sort((a, b) => a - b);
+                // if (num[2] > num[0] + num[1]) {
+                //     answer = "NO";
+                // } else {
+                //     answer = "YES";
+                // }
+
+                // 풀이
+                let answer = "YES",
+                    max;
+                let sum = a + b + c;
+                if (a > b) max = a;
+                else max = b;
+                if (c > max) max = c;
+                if (sum - max <= max) answer = "NO";
+                return answer;
+            }
+            console.log(solution(13, 20, 17));
+        </script>
+    </body>
+</html>
