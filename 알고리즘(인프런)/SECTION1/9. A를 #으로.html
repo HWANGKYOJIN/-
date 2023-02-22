@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                let answer = "";
+                // return s.replace(/A/g, "#");
+                // /A/ --> '대소문 구분하여 한개'
+                // /A/i --> '대소문 구분없이 한개'
+                // /A/ig --> '대소문 구분없이 모두'
+                for (let i = 0; i < s.length; i++) {
+                    if (s[i] !== "A") {
+                        answer += s[i];
+                    } else {
+                        answer += "#";
+                    }
+                }
+                return answer;
+            }
+
+            let str = "BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
