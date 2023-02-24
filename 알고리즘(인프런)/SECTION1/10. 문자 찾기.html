@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t) {
+                // 정규 표현식
+                // const regx = new RegExp(`[${letter}]`, "ig");
+                // return s.match(regx).length;
+                // let answer = 0;
+                // for (let i = 0; i < s.length; i++) {
+                //     if (s[i].includes(t)) {
+                //         answer += 1;
+                //     }
+                // }
+                // return answer;
+
+                // 풀이
+
+                let answer = 0;
+                for (let x of s) {
+                    if (x === t) answer++;
+                }
+                return answer;
+            }
+
+            let str = "COMPUTERPROGRAMMING";
+            console.log(solution(str, "R"));
+        </script>
+    </body>
+</html>
