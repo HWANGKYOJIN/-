@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                // let answer = "";
+                // for (let i = 0; i < s.length; i++) {
+                //     if (!answer.includes(s[i])) answer += s[i];
+                // }
+
+                // 풀이
+                // indexOf('찾고싶은것', 1 <- 1번 인덱스 이후부터 찾아라)
+                // for (let i = 0; i < s.length; i++) {
+                //     if (i === s.indexOf(s[i])) answer += s[i];
+                // }
+
+                // 해당 '문자'의 갯수 찾기
+                let answer = 0;
+                let position = s.indexOf("k");
+                while (position !== -1) {
+                    answer++;
+                    position = s.indexOf("k", position + 1);
+                }
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
