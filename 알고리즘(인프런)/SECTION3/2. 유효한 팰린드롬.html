@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                // let answer = "YES";
+                // let onlyLetter = s.match(/[a-z]/gi).join("").toLowerCase();
+                // let n = onlyLetter.length;
+                // let compareLetter = "";
+                // for (let i = n - 1; i >= 0; i--) {
+                //     compareLetter += onlyLetter[i];
+                // }
+                // if (onlyLetter !== compareLetter) answer = "NO";
+                // return answer;
+
+                // 풀이
+
+                let answer = "YES";
+                s = s.toLowerCase().replace(/[^a-z]/g, "");
+                if (s.split("").reverse().join("") !== s) return "NO";
+                return answer;
+            }
+
+            let str = "found7, time: study; Yduts; emit, 7Dnuof";
+            // let str = "found7, time: study; Yduts; emit, 7Ddfgnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
