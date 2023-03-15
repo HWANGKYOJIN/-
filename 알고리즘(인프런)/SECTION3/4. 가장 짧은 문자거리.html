@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t) {
+                // let answer = [];
+                // let n = s.length;
+                // for (let i = 0; i < n; i++) {
+                //     for (let j = 1; j < n; j++) {
+                //         if (s[i] === t) {
+                //             answer.push(0);
+                //             break;
+                //         } else if (
+                //             (s[i] !== t && s[i - j]) === t ||
+                //             s[i + j] === t
+                //         ) {
+                //             answer.push(j);
+                //             break;
+                //         }
+                //     }
+                // }
+                // return answer;
+
+                // 풀이((특정문자와의)가장 짧은 문자거리)
+                let p = 1000;
+                let answer = [];
+                for (let i = 0; i < s.length; i++) {
+                    if (s[i] !== t) {
+                        p++;
+                        answer.push(p);
+                    } else {
+                        p = 0;
+                        answer.push(p);
+                    }
+                }
+                p = 1000;
+                for (let i = s.length - 1; i >= 0; i--) {
+                    if (s[i] !== t) {
+                        p++;
+                        if (answer[i] > p) {
+                            answer[i] = p;
+                        }
+                    } else {
+                        p = 0;
+                    }
+                }
+                console.log(answer);
+            }
+
+            let str = "teachermode";
+            // let str = "taachrmode";
+            console.log(solution(str, "e"));
+        </script>
+    </body>
+</html>
