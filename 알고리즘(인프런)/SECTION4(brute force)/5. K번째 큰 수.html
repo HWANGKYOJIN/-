@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, k, card) {
+                // let sum = 0;
+                // let arrSum = [];
+                // for (let i = 0; i < card.length; i++) {
+                //     for (let j = i + 1; j < card.length; j++) {
+                //         for (let k = j + 1; k < card.length; k++) {
+                //             sum += card[i] + card[j] + card[k];
+                //             arrSum.push(sum);
+                //             sum = 0;
+                //         }
+                //     }
+                // }
+                // console.log(arrSum.sort((a, b) => b - a));
+                // return arrSum[k - 1];
+
+                // 풀이(set() 중복없애주는 Method, set() 메서드에서는 sort사용불가 Array.from으로 배열만들고 정렬해야함.)
+                let temp = new Set();
+                for (let i = 0; i < n; i++) {
+                    for (let j = i + 1; j < n; j++) {
+                        for (let k = j + 1; k < n; k++) {
+                            temp.add(card[i] + card[j] + card[k]);
+                        }
+                    }
+                }
+                let newArray = Array.from(temp).sort((a, b) => b - a);
+                answer = newArray[k - 1];
+                return answer;
+            }
+
+            let arr = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+            console.log(solution(10, 3, arr));
+        </script>
+    </body>
+</html>
