@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                // 다시풀기
+                // let obj = {};
+                // let max = Number.MIN_SAFE_INTEGER;
+                // let maxChar = "";
+                // for (let i = 0; i < s.length; i++) {
+                //     let letter = s[i];
+                //     obj[letter] ? (obj[letter] += 1) : (obj[letter] = 1);
+                // }
+                // for (let x in obj) {
+                //     // console.log(`obj.${x} = ${obj[x]}`);
+                //     if (obj[x] > max) {
+                //         max = obj[x];
+                //         maxChar = x;
+                //     }
+                // }
+                // return maxChar;
+
+                //풀이(map 사용)
+                let answer;
+                let sH = new Map();
+                let max = Number.MIN_SAFE_INTEGER;
+                for (let x of s) {
+                    if (sH.has(x)) sH.set(x, sH.get(x) + 1);
+                    else sH.set(x, 1);
+                }
+                for (let [key, val] of sH) {
+                    if (max < val) {
+                        max = val;
+                        answer = key;
+                    }
+                }
+                return answer;
+            }
+
+            let str = "BACBACCACCBDEDE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
